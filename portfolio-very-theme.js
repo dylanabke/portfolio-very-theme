@@ -21,6 +21,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
+    this.color = "1";
     this.t = this.t || {};
     this.t = {
       ...this.t,
@@ -40,6 +41,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      color: { type: String },
     };
   }
 
@@ -51,7 +53,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         :host {
           display: block;
           color: var(--ddd-theme-primary);
-          background-color: var(--ddd-theme-accent);
           font-family: var(--ddd-font-navigation);
         }
         .wrapper {
@@ -64,7 +65,10 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   // Lit render the HTML
   render() {
-    return html` <div class="wrapper">
+    return html` <div
+      class="wrapper"
+      style="background-color: var(--ddd-primary-${this.color});"
+    >
       <slot></slot>
     </div>`;
   }
