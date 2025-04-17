@@ -8,12 +8,11 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
  * `portfolio-very-theme`
- * 
+ *
  * @demo index.html
  * @element portfolio-very-theme
  */
 export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
-
   static get tag() {
     return "portfolio-very-theme";
   }
@@ -29,8 +28,8 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url).href +
-        "/../",
+        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url)
+          .href + "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
   }
@@ -45,31 +44,32 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   // Lit scoped styles
   static get styles() {
-    return [super.styles,
-    css`
-      :host {
-        display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
-      }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      h3 span {
-        font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
-      }
-    `];
+    return [
+      super.styles,
+      css`
+        :host {
+          display: block;
+          color: var(--ddd-theme-primary);
+          background-color: var(--ddd-theme-accent);
+          font-family: var(--ddd-font-navigation);
+        }
+        .wrapper {
+          margin: var(--ddd-spacing-2);
+          padding: var(--ddd-spacing-4);
+        }
+
+        .About {
+          background-color: red;
+        }
+      `,
+    ];
   }
 
   // Lit render the HTML
   render() {
-    return html`
-<div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
-  <slot></slot>
-</div>`;
+    return html` <div class="wrapper">
+      <slot></slot>
+    </div>`;
   }
 
   /**
