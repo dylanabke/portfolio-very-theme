@@ -5,6 +5,7 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import "@haxtheweb/scroll-button/scroll-button.js";
 
 /**
  * `portfolio-very-theme`
@@ -56,10 +57,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         .wrapper {
           margin: var(--ddd-spacing-2);
           padding: var(--ddd-spacing-4);
-        }
-
-        .About {
-          background-color: red;
         }
       `,
     ];
