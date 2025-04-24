@@ -5,8 +5,6 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-import "@haxtheweb/scroll-button/scroll-button.js";
-import "./portfolio-screen.js";
 
 /**
  * `portfolio-very-theme`
@@ -14,9 +12,9 @@ import "./portfolio-screen.js";
  * @demo index.html
  * @element portfolio-very-theme
  */
-export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
+export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
   static get tag() {
-    return "portfolio-very-theme";
+    return "portfolio-screen";
   }
 
   constructor() {
@@ -57,6 +55,24 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           font-family: var(--ddd-font-navigation);
           height: 100vh;
         }
+        portfolio-screen {
+          width: 100%;
+          height: 100vh;
+          color: white;
+          background-color: var(--ddd-primary-1);
+        }
+        portfolio-screen:hover {
+          box-shadow: var(--ddd-boxShadow-sm);
+        }
+        h1 {
+          text-align: center;
+          color: white;
+        }
+        p {
+          color: white;
+          margin: 0;
+          padding: 0;
+        }
       `,
     ];
   }
@@ -67,18 +83,12 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       class="wrapper"
       style="background-color: var(--ddd-primary-${this.color});"
     >
-      <div class="contact"></div>
       <slot></slot>
+      <div class="contact"></div>
+      <h1>${this.title}</h1>
+      <p>${this.t.description}</p>
     </div>`;
-  }
-
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
   }
 }
 
-globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);
+globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);

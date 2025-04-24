@@ -19,25 +19,12 @@
       #demo {
         margin: var(--ddd-spacing-2);
       }
-      portfolio-very-theme {
-        width: 100%;
-        height: 100vh;
-        color: white;
-        background-color: var(--ddd-primary-1);
-      }
-      portfolio-very-theme:hover {
-        box-shadow: var(--ddd-boxShadow-sm);
-      }
+
       scroll-button {
         position: fixed;
         bottom: 0;
         right: 0;
         margin: var(--ddd-spacing-2);
-      }
-      #example {
-        --portfolio-very-theme-font-size: var(--ddd-font-size-l);
-        background-color: var(--ddd-accent-2);
-        color: var(--ddd-primary-17);
       }
       your-banner a {
         border: 2px solid white;
@@ -54,7 +41,7 @@
         align-items: center;
         background-color: #00000066;
         position: fixed;
-        top: 100px;
+        top: 0px;
         left: 0;
         height: 100px;
         width: 100%;
@@ -67,43 +54,35 @@
 
   <body>
     <portfolio-very-theme>
-      <a name="1"></a>
+      <your-banner>
+        <a href="#1">About</a>
+        <a href="#2">Research</a>
+        <a href="#3">Presentations</a>
+        <a href="#4">Professional Development</a>
+        <a href="#5">Contact</a>
+      </your-banner>
       <portfolio-screen Title="About">
+        <a name="1"></a>
         <h1>About</h1>
         <p>Here is a lot of info about me: enter info</p>
-        <your-banner>
-          <a href="#1">About</a>
-          <a href="#2">Research</a>
-          <a href="#3">Presentations</a>
-          <a href="#4">Professional Development</a>
-          <a href="#5">Contact</a>
-        </your-banner>
       </portfolio-screen>
-    </portfolio-very-theme>
-    <portfolio-very-theme color="2">
-      <a name="2"></a>
       <portfolio-screen Title="Research">
+        <a name="2"></a>
         <h1>Research</h1>
         <p>A bunch of content here</p>
       </portfolio-screen>
-    </portfolio-very-theme>
-    <portfolio-very-theme>
-      <a name="3"></a>
       <portfolio-screen Title="Presentations">
+        <a name="3"></a>
         <h1>Presentations</h1>
         <p>A bunch of content here</p>
       </portfolio-screen>
-    </portfolio-very-theme>
-    <portfolio-very-theme>
-      <a name="4"></a>
       <portfolio-screen Title="Professional Development">
+        <a name="4"></a>
         <h1>Professional Development</h1>
         <p>A bunch of content here</p>
       </portfolio-screen>
-    </portfolio-very-theme>
-    <portfolio-very-theme>
-      <a name="5"></a>
       <portfolio-screen Title="Contact">
+        <a name="5"></a>
         <h1>Contact</h1>
         <p>A bunch of content here</p>
       </portfolio-screen>
