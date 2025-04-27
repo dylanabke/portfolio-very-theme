@@ -78,14 +78,13 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
           height: auto;
           object-fit: cover;
           margin-bottom: 20px;
-          margin-right: 20px;
           border-radius: 10px;
         }
-        h1 {
+        ::slotted(h1) {
           text-align: left;
           color: white;
         }
-        p {
+        ::slotted(p) {
           color: white;
           margin: 0;
           padding: 0;
