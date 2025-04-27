@@ -21,6 +21,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     super();
     this.title = "";
     this.color = "1";
+    this.image = "";
     this.t = this.t || {};
     this.t = {
       ...this.t,
@@ -41,6 +42,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       title: { type: String },
       color: { type: String },
+      image: { type: String },
     };
   }
 
@@ -51,21 +53,36 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       css`
         :host {
           display: block;
-          color: var(--ddd-theme-primary);
-          font-family: var(--ddd-font-navigation);
-          height: 100vh;
-        }
-        portfolio-screen {
           width: 100%;
           height: 100vh;
           color: white;
           background-color: var(--ddd-primary-1);
+          font-family: var(--ddd-font-navigation);
         }
-        portfolio-screen:hover {
+        :host(:hover) {
           box-shadow: var(--ddd-boxShadow-sm);
         }
+        portfolio-screen {
+          display: block;
+          min-height: 100vh;
+        }
+        .wrapper {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .screen-image {
+          width: 300px;
+          height: auto;
+          object-fit: cover;
+          margin-bottom: 20px;
+          margin-right: 20px;
+          border-radius: 10px;
+        }
         h1 {
-          text-align: center;
+          text-align: left;
           color: white;
         }
         p {
@@ -83,10 +100,10 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       class="wrapper"
       style="background-color: var(--ddd-primary-${this.color});"
     >
+      <img src="${this.image}" alt="Screen Image" class="screen-image" />
+
       <slot></slot>
       <div class="contact"></div>
-      <h1>${this.title}</h1>
-      <p>${this.t.description}</p>
     </div>`;
   }
 }
