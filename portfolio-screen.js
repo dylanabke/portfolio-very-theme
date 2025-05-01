@@ -70,24 +70,35 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
           min-height: 100vh;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
-        .screen-image {
+        .wrapper ::slotted(h1) {
+          margin: 0;
+          padding-left: 20px;
+          text-align: left;
+          padding-top: 50px;
+        }
+        .wrapper ::slotted(img) {
+          margin: 0;
+          padding-left: 20px;
+          align-items: center;
+          justify-content: center;
           width: 300px;
           height: auto;
-          object-fit: cover;
-          margin-bottom: 20px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          text-align: center;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
           border-radius: 10px;
         }
-        ::slotted(h1) {
-          text-align: left;
-          color: white;
-        }
-        ::slotted(p) {
-          color: white;
+        .wrapper ::slotted(p) {
           margin: 0;
-          padding: 0;
+          padding-left: 200px;
+          padding-right: 200px;
+          text-align: center;
         }
       `,
     ];
@@ -99,9 +110,8 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       class="wrapper"
       style="background-color: var(--ddd-primary-${this.color});"
     >
-      <img src="${this.image}" alt="Screen Image" class="screen-image" />
-
       <slot></slot>
+
       <div class="contact"></div>
     </div>`;
   }
