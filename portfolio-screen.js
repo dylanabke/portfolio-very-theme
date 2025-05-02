@@ -99,6 +99,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
           padding-left: 200px;
           padding-right: 200px;
           text-align: center;
+          padding-bottom: 0;
         }
       `,
     ];
