@@ -82,8 +82,8 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
           padding-left: 20px;
           align-items: center;
           justify-content: center;
-          width: 300px;
-          height: auto;
+          width: auto;
+          height: 200px;
           padding-top: 0px;
           padding-bottom: 0px;
           padding-left: 0px;
