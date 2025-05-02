@@ -58,12 +58,12 @@
 
   <body>
     <portfolio-very-theme>
-      <your-banner>
-        <a href="#1">About</a>
-        <a href="#2">Research</a>
-        <a href="#3">Resume</a>
-        <a href="#4">Professional Development</a>
-        <a href="#5">Contact</a>
+      <your-banner style="color: white">
+        <a href="#1" style="color: white">About</a>
+        <a href="#2" style="color: white">Research</a>
+        <a href="#3" style="color: white">Resume</a>
+        <a href="#4" style="color: white">Professional Development</a>
+        <a href="#5" style="color: white">Contact</a>
       </your-banner>
       <portfolio-screen id="1" title="About" color="1">
         <h1>About</h1>
@@ -115,18 +115,20 @@
       <portfolio-screen title="Contact" color="5">
         <a id="5"></a>
         <h1>Contact</h1>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/5995/5995295.png"
-          alt="Contact Icon"
-        />
+        <portfolio-card
+          name="Dylan Abke"
+          image="https://brand.psu.edu/images/backgrounds/veritcal-1-mark_registered.png"
+          description="Penn State University Student"
+        >
+        </portfolio-card>
         <p>Phone: 989-780-3312 Email: dylanabke@yahoo.com</p>
-        <a href="https://www.linkedin.com/in/dylan-abke/">LinkedIn</a>
       </portfolio-screen>
     </portfolio-very-theme>
     <scroll-button>
       <button>Scroll to top</button>
     </scroll-button>
     <script type="module" src="./portfolio-very-theme.js"></script>
+    <script type="module" src="./portfolio-card.js"></script>
 
     <style></style>
   </body>
